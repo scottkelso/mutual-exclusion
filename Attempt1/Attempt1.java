@@ -62,7 +62,7 @@ class P1 extends Thread {
 	}
 
 	public void nonCriticalSection() throws InterruptedException {
-		//       System.out.println("1 nc: Entering nonCritical section");
+		System.out.println("1 nc: Entering nonCritical section");
 		Time.delay(rnd.nextInt(20));
 
 		try {
@@ -71,7 +71,7 @@ class P1 extends Thread {
 			throw ex;
 		}
 
-		//       System.out.println("1 nc: Leaving nonCritical section");
+		System.out.println("1 nc: Leaving nonCritical section");
 	}
 
 	public void killMe() throws InterruptedException {
@@ -80,12 +80,12 @@ class P1 extends Thread {
 	}
 
 	public void preProtocol() {
-		//       System.out.println("1 prep: Entering preProtocol section");
+		System.out.println("1 prep: Entering preProtocol section");
 		while (Attempt1.turn == 2) {
 			yield();
 		}
 		Time.delay(rnd.nextInt(20));
-		//       System.out.println("1 prep: Leaving preProtocol section");
+		System.out.println("1 prep: Leaving preProtocol section");
 	}
 
 	public void criticalSection() {
@@ -96,10 +96,10 @@ class P1 extends Thread {
 	}
 
 	public void postProtocol() {
-		//       System.out.println("1 postp: Entering postProtocol section");
+		System.out.println("1 postp: Entering postProtocol section");
 		Time.delay(rnd.nextInt(20));
 		Attempt1.turn = 2;
-		//       System.out.println("1 postp: Leaving postProtocol section");
+		System.out.println("1 postp: Leaving postProtocol section");
 	}
 }
 
@@ -139,9 +139,9 @@ class P2 extends Thread {
 	}
 
 	public void postProtocol() {
-		//       System.out.println("2 postp: Entering postProtocol section");
+		System.out.println("2 postp: Entering postProtocol section");
 		Time.delay(rnd.nextInt(20));
 		Attempt1.turn = 1;
-		//       System.out.println("2 postp: Leaving postProtocol section");
+		System.out.println("2 postp: Leaving postProtocol section");
 	}
 }
