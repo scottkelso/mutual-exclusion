@@ -65,11 +65,11 @@ class P1 extends Thread {
 		System.out.println("1 nc: Entering nonCritical section");
 		Time.delay(rnd.nextInt(20));
 
-		try {
-			killMe();
-		} catch (InterruptedException ex) {
-			throw ex;
-		}
+//		try {
+//			killMe();
+//		} catch (InterruptedException ex) {
+//			throw ex;
+//		}
 
 		System.out.println("1 nc: Leaving nonCritical section");
 	}
